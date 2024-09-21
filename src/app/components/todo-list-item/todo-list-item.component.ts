@@ -1,10 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { Todo } from '../../models/Todo';
 
 @Component({
   selector: 'app-todo-list-item',
   standalone: true,
-  imports: [],
+  imports: [MatButtonModule, MatCardModule],
   templateUrl: './todo-list-item.component.html',
   styleUrl: './todo-list-item.component.css',
 })

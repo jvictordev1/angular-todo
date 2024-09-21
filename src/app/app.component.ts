@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { AddTodoComponent } from './components/add-todo/add-todo.component';
-import { TodoListComponent } from './components/todo-list/todo-list.component';
+import { RouterOutlet } from '@angular/router';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [TodoListComponent, AddTodoComponent],
+  imports: [RouterOutlet, NavbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

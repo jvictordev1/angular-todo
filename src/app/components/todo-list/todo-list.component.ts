@@ -10,8 +10,41 @@ import { TodoListItemComponent } from '../todo-list-item/todo-list-item.componen
   styleUrl: './todo-list.component.css',
 })
 export class TodoListComponent {
-  todos: Todo[] = [];
-  todosLength: number = this.todos.length;
+  todos: Todo[] = [
+    {
+      id: 'ab',
+      createdAt: 'ab',
+      description: 'ab',
+      dueDate: 'ab',
+      isComplete: true,
+      title: 'ab',
+    },
+    {
+      id: 'dd',
+      createdAt: 'bc',
+      description: 'ab',
+      dueDate: 'ab',
+      isComplete: true,
+      title: 'ab',
+    },
+    {
+      id: 'gg',
+      createdAt: 'cd',
+      description: 'ab',
+      dueDate: 'ab',
+      isComplete: true,
+      title: 'ab',
+    },
+    {
+      id: 'oo',
+      createdAt: 'ef',
+      description: 'ab',
+      dueDate: 'ab',
+      isComplete: true,
+      title: 'ab',
+    },
+  ];
+  todosLength: number = 1;
 
   deleteTodo(todo: Todo) {
     this.todos = this.todos.filter((t) => t.id !== todo.id); //deleta todo da interface

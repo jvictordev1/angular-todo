@@ -1,11 +1,12 @@
-<li [id]="todo.id">
-  <div>
-    <h1>{{ todo.title }}</h1>
-    <h3>{{ todo.description }}</h3>
-    <p>{{ todo.createdAt }} - {{ todo.dueDate }}</p>
-  </div>
-  <div>
-    <button type="button">Edit</button>
-    <button type="button" (click)="onDelete(todo)">Delete</button>
-  </div>
-</li>
+<mat-card appearance="outlined">
+  <mat-card-header>
+    <mat-card-title>{{ todo.title }}</mat-card-title>
+    <mat-card-subtitle>Criada em: {{ todo.createdAt }}</mat-card-subtitle>
+    <mat-card-subtitle>Data limite: {{ todo.dueDate }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-actions align="end">
+    <button mat-button>Detalhes</button>
+    <button mat-button>Editar</button>
+    <button mat-button (click)="onDelete(todo)">Excluir</button>
+  </mat-card-actions>
+</mat-card>

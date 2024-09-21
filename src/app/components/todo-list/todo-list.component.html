@@ -1,10 +1,12 @@
 @if (todosLength > 0) {
-<ul>
+<ul class="todos-list-container">
   @for (todo of todos; track todo.id) {
-  <app-todo-list-item
-    [todo]="todo"
-    (deleteTodo)="deleteTodo(todo)"
-  ></app-todo-list-item>
+  <li [id]="todo.id">
+    <app-todo-list-item
+      [todo]="todo"
+      (deleteTodo)="deleteTodo(todo)"
+    ></app-todo-list-item>
+  </li>
   }
 </ul>
 } @else {
