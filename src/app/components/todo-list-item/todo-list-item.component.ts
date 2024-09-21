@@ -1,14 +1,15 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Todo } from '../../models/Todo';
 
 @Component({
   selector: 'app-todo-list-item',
   standalone: true,
-  imports: [MatButtonModule, MatCardModule],
+  imports: [MatButtonModule, MatCardModule, RouterLink, RouterLinkActive],
   templateUrl: './todo-list-item.component.html',
-  styleUrl: './todo-list-item.component.css',
+  styleUrl: './todo-list-item.component.scss',
 })
 export class TodoListItemComponent {
   @Input() todo!: Todo;

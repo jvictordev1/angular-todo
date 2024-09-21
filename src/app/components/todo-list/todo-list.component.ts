@@ -12,7 +12,7 @@ import { TodoListItemComponent } from '../todo-list-item/todo-list-item.componen
 export class TodoListComponent {
   todos: Todo[] = [
     {
-      id: 'ab',
+      id: 1,
       createdAt: 'ab',
       description: 'ab',
       dueDate: 'ab',
@@ -20,7 +20,7 @@ export class TodoListComponent {
       title: 'ab',
     },
     {
-      id: 'dd',
+      id: 2,
       createdAt: 'bc',
       description: 'ab',
       dueDate: 'ab',
@@ -28,7 +28,7 @@ export class TodoListComponent {
       title: 'ab',
     },
     {
-      id: 'gg',
+      id: 3,
       createdAt: 'cd',
       description: 'ab',
       dueDate: 'ab',
@@ -36,7 +36,7 @@ export class TodoListComponent {
       title: 'ab',
     },
     {
-      id: 'oo',
+      id: 4,
       createdAt: 'ef',
       description: 'ab',
       dueDate: 'ab',

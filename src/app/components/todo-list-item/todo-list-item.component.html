@@ -5,8 +5,14 @@
     <mat-card-subtitle>Data limite: {{ todo.dueDate }}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-actions align="end">
-    <button mat-button>Detalhes</button>
-    <button mat-button>Editar</button>
-    <button mat-button (click)="onDelete(todo)">Excluir</button>
+    <a [routerLink]="['details/', todo.id]" routerLinkActive="active" mat-button
+      >Detalhes</a
+    >
+    <a [routerLink]="['edit/', todo.id]" routerLinkActive="active" mat-button
+      >Editar</a
+    >
+    <button class="tertiary-button" mat-button (click)="onDelete(todo)">
+      Excluir
+    </button>
   </mat-card-actions>
 </mat-card>
