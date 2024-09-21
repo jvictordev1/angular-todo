@@ -2,7 +2,7 @@ export interface Todo {
   id: string;
   title: string;
   description: string;
-  createdAt: Date;
-  dueDate: Date;
+  createdAt: string;
+  dueDate: string;
   isComplete: boolean;
 }

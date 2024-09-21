@@ -1,7 +1,12 @@
 @if (todosLength > 0) {
 <ul>
-  @for (todo in todos; track todo.id) {
-  <li></li>
+  @for (todo of todos; track todo.id) {
+  <app-todo-list-item
+    [todo]="todo"
+    (deleteTodo)="deleteTodo(todo)"
+  ></app-todo-list-item>
   }
 </ul>
+} @else {
+<p>Lista vazia</p>
 }

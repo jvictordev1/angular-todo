@@ -1,11 +1,11 @@
-<li [id]="id">
+<li [id]="todo.id">
   <div>
-    <h1>{{ title }}</h1>
-    <h3>{{ description }}</h3>
-    <p>{{ createdAt }} - {{ dueDate }}</p>
+    <h1>{{ todo.title }}</h1>
+    <h3>{{ todo.description }}</h3>
+    <p>{{ todo.createdAt }} - {{ todo.dueDate }}</p>
   </div>
   <div>
     <button type="button">Edit</button>
-    <button type="button">Delete</button>
+    <button type="button" (click)="onDelete(todo)">Delete</button>
   </div>
 </li>
