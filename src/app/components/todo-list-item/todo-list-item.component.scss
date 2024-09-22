@@ -4,6 +4,7 @@ $theme: mat.define-theme();
 
 .tertiary-button {
   @include mat.button-color($theme, $color-variant: tertiary);
+  cursor: pointer;
 }
 .incompleted {
   color: #ef4444;
