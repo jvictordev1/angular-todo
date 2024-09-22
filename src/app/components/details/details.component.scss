@@ -16,12 +16,18 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100%;
   padding: 14px;
   border: 1px solid #d4d4d4;
   border-radius: 12px;
 }
 .details-section-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   text-align: center;
 }
 .details-section-header h1 {
@@ -49,7 +55,18 @@ p {
   flex-direction: column;
   gap: 10px;
   margin-bottom: 20px;
+  max-width: 70%;
+  overflow-wrap: break-word;
 }
 .page-title {
   margin-bottom: 14px;
+}
+@media (max-width: 850px) {
+  .details-section {
+    width: 80vw;
+  }
+  .details-section h1 {
+    overflow-wrap: break-word;
+    font-size: 32px;
+  }
 }

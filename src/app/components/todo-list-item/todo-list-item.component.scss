@@ -11,3 +11,10 @@ $theme: mat.define-theme();
 .completed {
   color: #22c55e;
 }
+mat-card {
+  max-width: 100%;
+}
+mat-card-header {
+  max-width: 100%;
+  overflow-x: hidden;
+}

@@ -4,7 +4,8 @@
   gap: 12px;
   list-style-type: none;
   width: 100%;
-  max-height: 550px;
+
+  height: 55vh;
   padding: 0 10px;
   overflow-y: scroll;
   margin: 0;
