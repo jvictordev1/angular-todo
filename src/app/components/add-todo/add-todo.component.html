@@ -1,20 +1,30 @@
-<form #addTodoForm="ngForm" (ngSubmit)="onSubmit()">
-  <mat-form-field>
+<form #addTodoForm="ngForm" (ngSubmit)="onSubmit(addTodoForm)">
+  <h1>Adicionar nova tarefa</h1>
+  <mat-form-field class="input-field">
     <mat-label>Título da tarefa</mat-label>
-    <input matInput placeholder="Comprar pão" required />
+    <input ngModel name="title" matInput placeholder="Comprar pão" required />
   </mat-form-field>
-  <mat-form-field>
+  <mat-form-field class="input-field">
     <mat-label>Descrição da tarefa</mat-label>
-    <textarea matInput placeholder="Comprar pão na vendinha"></textarea>
+    <textarea
+      ngModel
+      name="description"
+      matInput
+      placeholder="Comprar pão na vendinha"
+    ></textarea>
   </mat-form-field>
-  <mat-form-field>
+  <mat-form-field class="input-field">
     <mat-label>Data limite</mat-label>
     <input
+      ngModel
+      name="dueDate"
       matInput
       placeholder="Comprar pão na vendinha"
       type="datetime-local"
       required
     />
   </mat-form-field>
-  <button mat-flat-button>Criar</button>
+  <button type="submit" mat-flat-button [disabled]="!addTodoForm.valid">
+    Criar
+  </button>
 </form>

@@ -1,14 +1,13 @@
-@if (todosLength > 0) {
-<ul class="todos-list-container">
-  @for (todo of todos; track todo.id) {
-  <li [id]="todo.id">
-    <app-todo-list-item
-      [todo]="todo"
-      (deleteTodo)="deleteTodo(todo)"
-    ></app-todo-list-item>
-  </li>
-  }
-</ul>
-} @else {
-<p>Lista vazia</p>
-}
+<div *ngIf="todos.length > 0; else emptyList">
+  <ul class="todos-list-container">
+    <li *ngFor="let todo of todos; trackBy: trackByFn" [id]="todo.id">
+      <app-todo-list-item
+        [todo]="todo"
+        (deleteTodo)="deleteTodo(todo)"
+      ></app-todo-list-item>
+    </li>
+  </ul>
+</div>
+<ng-template #emptyList>
+  <p>Lista vazia</p>
+</ng-template>

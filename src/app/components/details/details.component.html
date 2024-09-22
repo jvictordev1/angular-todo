@@ -1,5 +1,12 @@
 <section class="details-section">
   <header class="details-section-header">
-    <h1>Tarefa tal</h1>
+    <div>
+      <h1>{{ todo!.title }}</h1>
+      <p>{{ todo!.createdAt }} - {{ todo!.dueDate }}</p>
+      <p>{{ todo!.isComplete }}</p>
+    </div>
   </header>
+  <div>
+    <h4>{{ todo!.description }}</h4>
+  </div>
 </section>
