@@ -1,12 +1,3 @@
 {
-  "todos": [
-    {
-      "id": "9824",
-      "title": "342342",
-      "description": "4234",
-      "dueDate": "3123-12-12T15:03:00.000Z",
-      "createdAt": "2024-09-22T21:23:15.304Z",
-      "isComplete": true
-    }
-  ]
+  "todos": []
 }
