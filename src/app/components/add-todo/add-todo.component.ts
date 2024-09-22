@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Todo } from '../../models/Todo';
 import { TodosService } from '../../services/todos.service';
 @Component({
@@ -13,18 +14,24 @@ import { TodosService } from '../../services/todos.service';
   styleUrl: './add-todo.component.css',
 })
 export class AddTodoComponent {
-  constructor(private todoService: TodosService) {}
+  constructor(
+    private todoService: TodosService,
+    private snackbar: MatSnackBar
+  ) {}
   onSubmit(form: any) {
     if (form.valid) {
+      const dateNow = new Date();
+      const dueDate = new Date(form.value.dueDate);
       const todo: Todo = {
-        createdAt: new Date(),
+        ...form.value,
+        createdAt: dateNow,
+        dueDate: dueDate,
         id: (Math.random() * 10000).toFixed(0),
         isComplete: false,
-        dueDate: new Date(form.value.dueDate),
-        ...form.value,
       };
       this.todoService.addNewTodo(todo).subscribe();
       form.reset();
+      this.snackbar.open('Tarefa criada com sucesso', '', { duration: 5000 });
       return;
     }
   }

@@ -1,0 +1,45 @@
+<form
+  #editTodoForm="ngForm"
+  (submit)="onSubmit(editTodoForm)"
+  *ngIf="!isLoading; else loading"
+>
+  <h1>Editar tarefa</h1>
+  <mat-form-field class="input-field">
+    <mat-label>Título da tarefa</mat-label>
+    <input
+      ngModel
+      name="title"
+      matInput
+      placeholder="Comprar pão"
+      required
+      [(ngModel)]="todo!.title"
+    />
+  </mat-form-field>
+  <mat-form-field class="input-field">
+    <mat-label>Descrição da tarefa</mat-label>
+    <textarea
+      ngModel
+      name="description"
+      matInput
+      placeholder="Comprar pão na vendinha"
+      [(ngModel)]="todo!.description"
+    ></textarea>
+  </mat-form-field>
+  <mat-form-field class="input-field">
+    <mat-label>Data limite</mat-label>
+    <input
+      [(ngModel)]="todoDate"
+      name="dueDate"
+      matInput
+      placeholder="Comprar pão na vendinha"
+      type="datetime-local"
+      required
+    />
+  </mat-form-field>
+  <button type="submit" mat-flat-button [disabled]="!editTodoForm.valid">
+    Editar
+  </button>
+</form>
+<ng-template #loading>
+  <mat-spinner></mat-spinner>
+</ng-template>

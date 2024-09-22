@@ -4,8 +4,12 @@
   gap: 12px;
   list-style-type: none;
   width: 100%;
-  max-height: 480px;
+  max-height: 550px;
   padding: 0 10px;
   overflow-y: scroll;
   margin: 0;
+}
+.empty-list-text {
+  font-size: 20px;
+  text-align: center;
 }

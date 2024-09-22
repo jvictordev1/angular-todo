@@ -24,6 +24,7 @@ export class TodoListComponent implements OnInit {
 
   deleteTodo(todo: Todo) {
     this.todos = this.todos.filter((t) => t.id !== todo.id); //deleta todo da interface
+    this.todoService.deleteTodo(todo.id).subscribe();
   }
 
   trackByFn(index: number, todo: Todo): number {

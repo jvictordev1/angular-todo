@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Todo } from '../../models/Todo';
@@ -6,7 +7,7 @@ import { TodosService } from '../../services/todos.service';
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './details.component.html',
   styleUrl: './details.component.scss',
 })

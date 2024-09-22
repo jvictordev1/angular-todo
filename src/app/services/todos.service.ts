@@ -19,4 +19,10 @@ export class TodosService {
   getTodoById(todoId: number): Observable<Todo> {
     return this.http.get<Todo>(`${this.url}/${todoId}`);
   }
+  updateTodo(todo: Todo): Observable<Todo> {
+    return this.http.put<Todo>(`${this.url}/${todo.id}`, todo);
+  }
+  deleteTodo(todoId: number): Observable<Todo> {
+    return this.http.delete<Todo>(`${this.url}/${todoId}`);
+  }
 }

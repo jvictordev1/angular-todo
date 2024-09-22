@@ -1,20 +1,3 @@
 {
-  "todos": [
-    {
-      "id": "8045",
-      "createdAt": "2024-09-22T15:14:55.741Z",
-      "isComplete": false,
-      "dueDate": "2010-10-10T19:00",
-      "title": "hhh",
-      "description": "hhh"
-    },
-    {
-      "id": "2485",
-      "createdAt": "2024-09-22T15:21:43.164Z",
-      "isComplete": false,
-      "dueDate": "2010-10-10T19:00",
-      "title": "jogar bola",
-      "description": "jogar"
-    }
-  ]
+  "todos": []
 }

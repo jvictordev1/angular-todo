@@ -1,8 +1,18 @@
 <mat-card appearance="outlined">
   <mat-card-header>
     <mat-card-title>{{ todo.title }}</mat-card-title>
-    <mat-card-subtitle>Criada em: {{ todo.createdAt }}</mat-card-subtitle>
-    <mat-card-subtitle>Data limite: {{ todo.dueDate }}</mat-card-subtitle>
+    <mat-card-subtitle
+      >Criada em: {{ todo.createdAt | date : "shortDate" }} às
+      {{ todo.createdAt | date : "shortTime" }}</mat-card-subtitle
+    >
+    <mat-card-subtitle
+      >Data limite: {{ todo.dueDate | date : "shortDate" }} às
+      {{ todo.dueDate | date : "shortTime" }}</mat-card-subtitle
+    >
+    <mat-card-subtitle
+      >Status: @if(todo.isComplete) {<span class="completed">Completa</span
+      >}@else{<span class="incompleted">Incompleta</span>}</mat-card-subtitle
+    >
   </mat-card-header>
   <mat-card-actions align="end">
     <a [routerLink]="['details/', todo.id]" routerLinkActive="active" mat-button
@@ -11,6 +21,9 @@
     <a [routerLink]="['edit/', todo.id]" routerLinkActive="active" mat-button
       >Editar</a
     >
+    <button mat-button (click)="onCompleted(todo)" [disabled]="todo.isComplete">
+      Concluir
+    </button>
     <button class="tertiary-button" mat-button (click)="onDelete(todo)">
       Excluir
     </button>
