@@ -50,9 +50,9 @@ export class EditComponent implements OnInit {
       const todo: Todo = {
         ...form.value,
         id: this.todoId,
+        isComplete: this.todo!.isComplete,
         createdAt: dateNow,
         dueDate: dueDate,
-        isComplete: false,
       };
       this.todoService.updateTodo(todo).subscribe();
       form.reset();

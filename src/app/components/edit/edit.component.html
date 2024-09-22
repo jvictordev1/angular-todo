@@ -7,7 +7,6 @@
   <mat-form-field class="input-field">
     <mat-label>Título da tarefa</mat-label>
     <input
-      ngModel
       name="title"
       matInput
       placeholder="Comprar pão"
@@ -18,11 +17,10 @@
   <mat-form-field class="input-field">
     <mat-label>Descrição da tarefa</mat-label>
     <textarea
-      ngModel
+      [(ngModel)]="todo!.description"
       name="description"
       matInput
       placeholder="Comprar pão na vendinha"
-      [(ngModel)]="todo!.description"
     ></textarea>
   </mat-form-field>
   <mat-form-field class="input-field">
