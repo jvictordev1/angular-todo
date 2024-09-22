@@ -14,10 +14,12 @@ import { TodosService } from '../../services/todos.service';
   styleUrl: './add-todo.component.css',
 })
 export class AddTodoComponent {
+  minDate: string = '';
   constructor(
     private todoService: TodosService,
     private snackbar: MatSnackBar
   ) {}
+
   onSubmit(form: any) {
     if (form.valid) {
       const dateNow = new Date();

@@ -42,6 +42,7 @@ p {
 }
 .description-container {
   max-width: 70%;
+  overflow-wrap: break-word;
 }
 .todo-details-info {
   display: flex;
