@@ -1,17 +1,17 @@
-<section class="details-section">
+<section class="details-section" *ngIf="!isLoading; else loading">
   <section class="todo-details">
     <header class="details-section-header">
       <div class="todo-details-info">
-        <h1>{{ todo?.title }}</h1>
+        <h1>{{ todo!.title }}</h1>
         <p>
           Criada em: {{ todo!.createdAt | date : "shortDate" }} às
-          {{ todo?.createdAt | date : "shortTime" }}
+          {{ todo!.createdAt | date : "shortTime" }}
         </p>
         <p>
           Data limite: {{ todo!.dueDate | date : "shortDate" }} às
           {{ todo?.dueDate | date : "shortTime" }}
         </p>
-        @if (todo?.isComplete) {
+        @if (todo!.isComplete) {
         <p class="status-badge completed">Completa</p>
         } @else {
         <p class="status-badge not-completed">Incompleta</p>
@@ -19,7 +19,10 @@
       </div>
     </header>
     <div class="description-container">
-      <p>{{ todo?.description }}</p>
+      <p>{{ todo!.description }}</p>
     </div>
   </section>
 </section>
+<ng-template #loading>
+  <mat-spinner></mat-spinner>
+</ng-template>
