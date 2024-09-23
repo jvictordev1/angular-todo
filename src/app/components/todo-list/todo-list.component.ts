@@ -12,22 +12,27 @@ import { TodoListItemComponent } from '../todo-list-item/todo-list-item.componen
   styleUrl: './todo-list.component.css',
 })
 export class TodoListComponent implements OnInit {
+  // componente criado para lidar com lista de Todos
   todos: Todo[] = [];
 
-  constructor(private todoService: TodosService) {}
+  constructor(private todoService: TodosService) {} // utilização de serviço todoService
 
   ngOnInit(): void {
+    // quando o componente for renderizado
     this.todoService.getAllTodos().subscribe((data) => {
-      this.todos = data;
+      // chama método para obter todas as Tarefas
+      this.todos = data; // atribui dados de retorno da api a propriedade todos
     });
   }
 
   deleteTodo(todo: Todo) {
-    this.todos = this.todos.filter((t) => t.id !== todo.id); //deleta todo da interface
-    this.todoService.deleteTodo(todo.id).subscribe();
+    // método chamado quando uma tarefa for deletada
+    this.todos = this.todos.filter((t) => t.id !== todo.id); //deleta a tarefa da interface
+    this.todoService.deleteTodo(todo.id).subscribe(); // chama método do serviço para deletar tarefa do banco de dados
   }
 
   trackByFn(index: number, todo: Todo): number {
-    return todo.id;
+    // função criada para utilizar atributo trackBy no *ngFor
+    return todo.id; // retorna id do todo
   }
 }

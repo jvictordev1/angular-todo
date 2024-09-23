@@ -8,4 +8,4 @@ import { TodoListComponent } from '../todo-list/todo-list.component';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent {}
+export class HomeComponent {} // componente criado para criar página Home

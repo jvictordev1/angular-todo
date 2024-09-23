@@ -1,28 +1,33 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Todo } from '../models/Todo';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TodosService {
-  private url: string = 'http://localhost:3000/todos';
-  constructor(private http: HttpClient) {}
+  // serviço criado para lidar com api do json-server
+  private url: string = 'http://localhost:3000/todos'; // url da api
+  constructor(private http: HttpClient) {} // utilização o serviço httpclient
 
   addNewTodo(todo: Todo) {
-    return this.http.post<Todo>(this.url, todo);
+    // método utilizado para criar nova tarefa
+    return this.http.post<Todo>(this.url, todo); // retorna observable para criação de nova tarefa
   }
-  getAllTodos(): Observable<Todo[]> {
-    return this.http.get<Todo[]>(this.url);
+  getAllTodos() {
+    // método utilizado para retornar todas as tarefas
+    return this.http.get<Todo[]>(this.url); // retorna observable para criação obtenção de todas tarefas
   }
-  getTodoById(todoId: number): Observable<Todo> {
-    return this.http.get<Todo>(`${this.url}/${todoId}`);
+  getTodoById(todoId: number) {
+    // método utilizado para retornar tarefa com id igual ao parametro
+    return this.http.get<Todo>(`${this.url}/${todoId}`); // retorna observable para obtenção de tarefa especifica
   }
-  updateTodo(todo: Todo): Observable<Todo> {
-    return this.http.put<Todo>(`${this.url}/${todo.id}`, todo);
+  updateTodo(todo: Todo) {
+    // método utilizado para atualizar tarefa com id igual ao parametro
+    return this.http.put<Todo>(`${this.url}/${todo.id}`, todo); // retorna observable para atualizar uma dada tarefa
   }
-  deleteTodo(todoId: number): Observable<Todo> {
-    return this.http.delete<Todo>(`${this.url}/${todoId}`);
+  deleteTodo(todoId: number) {
+    // método utilizado para apagar uma dada tarefa
+    return this.http.delete<Todo>(`${this.url}/${todoId}`); // retorna observable para deletar uma dada tarefa
   }
 }

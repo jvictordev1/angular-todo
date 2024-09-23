@@ -13,18 +13,21 @@ import { TodosService } from '../../services/todos.service';
   styleUrl: './details.component.scss',
 })
 export class DetailsComponent implements OnInit {
+  // componente criado para mostrar detalhes sobre uma tarefa
   todo: Todo | undefined;
   isLoading: boolean = true;
   constructor(
     private route: ActivatedRoute,
     private todoService: TodosService
   ) {}
+  // utilização de serviços de rota e todoService
   ngOnInit(): void {
-    const routeParams = this.route.snapshot.paramMap;
-    const todoId = Number(routeParams.get('id'));
+    // quando o componente for renderizado
+    const routeParams = this.route.snapshot.paramMap; // obtém parametros de rota
+    const todoId = Number(routeParams.get('id')); // obtem parametro id da rota
     this.todoService
       .getTodoById(todoId)
-      .subscribe((data) => (this.todo = data));
-    this.isLoading = false;
+      .subscribe((data) => (this.todo = data)); // utiliza service para obter todos as tarefas do banco
+    this.isLoading = false; // seta a animação de carregamento de página para falso
   }
 }

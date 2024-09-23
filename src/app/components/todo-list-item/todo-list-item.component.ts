@@ -21,21 +21,24 @@ import { TodosService } from '../../services/todos.service';
   styleUrl: './todo-list-item.component.scss',
 })
 export class TodoListItemComponent {
-  @Input() todo!: Todo;
-  @Output() deleteTodo: EventEmitter<Todo> = new EventEmitter();
+  // componente card para tarefa
+  @Input() todo!: Todo; // entrada do componente com dados sobre uma tarefa
+  @Output() deleteTodo: EventEmitter<Todo> = new EventEmitter(); // saída do componente com evento de click no botão de delete
 
   constructor(
     private todoService: TodosService,
     private snackbar: MatSnackBar
-  ) {}
+  ) {} // utilização de serviços todoService e snackbar
 
   onDelete(todo: Todo) {
-    this.deleteTodo.emit(todo);
-    this.snackbar.open('Tarefa excluida com sucesso', '', { duration: 5000 });
+    // método chamado quando o botão de delete for apertado
+    this.deleteTodo.emit(todo); // emissão do evento deleteTodo na saída do componente
+    this.snackbar.open('Tarefa excluida com sucesso', '', { duration: 5000 }); // snackbar de sucesso
   }
   onCompleted(todo: Todo) {
-    todo.isComplete = !todo.isComplete;
-    this.todoService.updateTodo(todo).subscribe();
-    this.snackbar.open('Tarefa completa com sucesso', '', { duration: 5000 });
+    // método chamado quando botão concluir for apertado
+    todo.isComplete = !todo.isComplete; // alteração do status da tarefa
+    this.todoService.updateTodo(todo).subscribe(); // chamada a api para atualizar tarefa
+    this.snackbar.open('Tarefa completa com sucesso', '', { duration: 5000 }); // snackbar de sucesso
   }
 }
