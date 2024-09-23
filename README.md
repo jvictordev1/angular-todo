@@ -1,27 +1,46 @@
-# TodoAngular
+<h1 align="center">
+Angular Todo
+</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.5.
+---
 
-## Development server
+## Descrição do projeto.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Esse projeto consiste num sistema web para lista de tarefas, onde os usuários podem registrar, editar, concluir e apagar suas tarefas.
 
-## Code scaffolding
+## Instruções de como executar a aplicação
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Siga o passo a passo descrito abaixo no seu terminal. **A aplicação só funcionará corretamente se você executar a interface e o json-server.**
 
-## Build
+### Interface
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+  git clone https://github.com/jvictordev1/angular-todo.git
+  cd angular-todo
+  npm i
+  npm start
+```
 
-## Running unit tests
+### Json server
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Na mesma pasta da aplicação, execute:
 
-## Running end-to-end tests
+```bash
+  json-server --watch db.json
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Acesse a página _http://localhost:4200_ para utilizar a aplicação.
 
-## Further help
+## Tecnologias utilizadas
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Typescript
+- HTML
+- CSS
+- Angular
+
+## Possíveis melhorias futuras.
+
+- [ ] Adicionar sistema de login para usuários
+- [ ] Adicionar lembretes para conclusão de tarefas
+- [ ] Adicionar possibilidade de integração de imagens às tarefas
+- [ ] Adicionar prioridades às tarefas
